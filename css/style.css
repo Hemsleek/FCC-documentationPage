@@ -1,8 +1,86 @@
 html,body{
     margin: 0;
     padding: o;
-
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 *{
     box-sizing: border-box;
 }
+
+/*
+ HELPER STYLES START
+ ===================
+ */
+
+.grid{
+    display: grid;
+}
+.grid-rows{
+    grid-template-columns:22vw 1fr;
+    
+}
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction:column;
+}
+.flex.align-start{
+    align-items:flex-start;
+}
+.flex.justify-evenly{
+    justify-content: space-evenly;
+}
+.flex.justify-between{
+    justify-content: space-between;
+
+}
+
+ /*
+ HELPER STYLES START
+ ===================
+ */
+
+ body{
+    background:#FFFFFF;
+    color: #505156 ;
+    
+}
+header{
+    font-size:1.8rem ;
+    color:#000;
+}
+
+#navbar{
+    font-weight: 400;
+    overflow-y: auto;
+}
+#navbar > header{
+    background-color: #fff;
+    padding:1.5rem 0 1.5rem 2rem;  
+    
+}
+.links{
+
+}
+.links>a{
+    text-decoration: none;
+    color: #505156 ;
+    border-top: .5px #4D4E53 solid  ;
+    font-weight: 400;
+    font-size: 1rem;
+    width: 22vw;
+    padding:.7rem 0 .7rem 2rem;  
+   
+}
+#main-doc{
+    padding:1.8rem;
+
+}
+code{
+    width: 100vh;
+    padding: 1rem;
+    background-color: #F7F7F7;
+}
+
