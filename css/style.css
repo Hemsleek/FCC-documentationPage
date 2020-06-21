@@ -16,7 +16,7 @@ html,body{
 .grid{
     display: grid;
 }
-.grid-rows{
+.grid-cols{
     grid-template-columns:22vw 1fr;
     grid-template-areas: "navbar main-doc";
 }
@@ -32,10 +32,7 @@ html,body{
 .flex.justify-evenly{
     justify-content: space-evenly;
 }
-.flex.justify-between{
-    justify-content: space-between;
 
-}
 
  /*
  HELPER STYLES START
@@ -62,7 +59,7 @@ p,ul{
     font-size:.96rem ;
 }
 p{
-    margin:0.96rem 0;
+    margin:1.2rem 0 1rem 1rem;
 }
 li{
     margin:0.94rem 0 0 1.25rem;
@@ -70,34 +67,30 @@ li{
 
 #navbar{
     grid-area: navbar;
-
     width:22vw;
-
-   border-right:3px #99A1A1 solid;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index:5;
-  display: block;
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-
-  
-
+    border-right:3px #99A1A1 solid;
+    position: fixed; 
+    height:100vh;
    
 }
 #navbar > header{
+    
     background-color: #fff;
-    padding:1.5rem 0 1.5rem 2rem;  
-    /* position:fixed;
-    top:0;
-    width:22vw; */
-
+    padding:1.5rem .5rem 1.5rem 2rem;  
+    position:fixed;
+    width:21vw;
+    height: 10%;
 }
 .links{
-  
-    
+    height:90%;
+    margin-top:82px; 
+    overflow-y: auto;
+    overflow-x: hidden;    
 }
-.links>a{
+.overflowed{
+    height:fit-content;
+}
+.links a{
     text-decoration: none;
     color: #505156 ;
     border-top: .5px #4D4E53 solid  ;
@@ -115,4 +108,67 @@ code{
     margin:1rem;
     border-radius: 4px;
 }
+nav a:last-child{
+    padding-bottom:2rem;
+}
 
+/*
+ SMALL SCREEN START
+ ================
+ */
+
+@media(max-width:640px){
+
+.grid-cols{
+    grid-template-columns: 1fr;
+    grid-template-areas: "navbar" "main-doc" ;   
+}
+.flex.align-start{
+    align-items: center;
+}
+    body{
+        font-size:12px;
+    }
+    #navbar{
+        position:inherit;
+        width:100vw;
+        height:40vh;
+        top:0;
+        background-color:#fff ;
+        z-index:2;
+        border-right:0;
+        overflow: hidden;
+        border-bottom:2px #99A1A1 solid;
+        
+        
+    }
+    .links a{
+        width: 100vw;
+   
+    }
+    #navbar > header{
+        
+        width:100vw;
+        padding:1rem;
+        text-align: center;
+        
+    }
+    #main-doc{
+        
+        margin-top:4vh;
+        width:100vw;
+        background-color: #FFFFFF;
+    }
+    .links{
+        margin-top:60px;
+    }
+    nav a:last-child{
+        padding-bottom:2.5rem;
+    }
+}
+
+
+/*
+ SMALL SCREEN START
+ ================
+ */
